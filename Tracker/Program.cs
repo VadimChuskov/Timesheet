@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using System.Drawing.Text;
 
 namespace Tracker
@@ -11,6 +12,21 @@ namespace Tracker
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+
+            // Build a config object, using env vars and JSON providers.
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            //// Get values from the config given their key and their target type.
+            //Settings settings = config.GetRequiredSection("Settings").Get<Settings>();
+
+            //// Write the values to the console.
+            //Console.WriteLine($"KeyOne = {settings.KeyOne}");
+            //Console.WriteLine($"KeyTwo = {settings.KeyTwo}");
+            //Console.WriteLine($"KeyThree:Message = {settings.KeyThree.Message}");
+
+
             var pfc = LoadFonts();
             Application.Run(new Form1(pfc));
         }
