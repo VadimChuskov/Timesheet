@@ -6,7 +6,7 @@ namespace Tracker
     {
         public Form1(PrivateFontCollection privateFontCollection)
         {
-            InitializeComponent(privateFontCollection);
+            InitializeComponent();
         }
     }
 }

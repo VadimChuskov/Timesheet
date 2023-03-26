@@ -5,6 +5,18 @@ namespace Tracker
 {
     internal static class Program
     {
+        private static IConfiguration Configuration { get; } = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //.AddJsonFile(
+            //    $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development"}.json",
+            //    optional: true)
+            //.AddEnvironmentVariables()
+            .Build();
+
+        //private static ILogger<Program> _logger;
+
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
