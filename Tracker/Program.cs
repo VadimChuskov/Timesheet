@@ -40,7 +40,7 @@ namespace Tracker
 
 
             var pfc = LoadFonts();
-            Application.Run(new Form1(pfc));
+            Application.Run(new MainForm(pfc));
         }
 
         static PrivateFontCollection LoadFonts()
@@ -49,7 +49,7 @@ namespace Tracker
 
             try
             {
-                pfc.AddFontFile(Application.StartupPath + @"\src\Fonts\DS-DIGII.ttf");
+                pfc.AddFontFile(Application.StartupPath + @"\src\Fonts\LCDAT&TPhoneTimeDate.ttf");
             }
             catch (Exception e)
             {
